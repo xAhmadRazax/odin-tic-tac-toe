@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/app.js"></script>
+  </head>
+  <body>
+    <!-- overlays -->
+    <template data-template>
+      <form data-form method="dialog">
+        <div class="form-control">
+          <label class="form-control__label" for="p1-name">Player name</label>
+          <input
+            data-p1-name
+            id="p1-name"
+            name="p1-name"
+            class="form-control__input"
+            type="text"
+            placeholder="player 1"
+          />
+        </div>
+        <div class="form-control">
+          <label class="form-control__label" for="p1-marker">marker</label>
+          <input
+            data-p1-marker
+            name="p1-marker"
+            id="p1-marker"
+            class="form-control__input"
+            type="text"
+            placeholder="x"
+            max="1"
+          />
+        </div>
+        <div class="form-control">
+          <label class="form-control__label" for="p2-name">Player name</label>
+          <input
+            data-p2-name
+            id="p2-name"
+            name="p2-name"
+            class="form-control__input"
+            type="text"
+            placeholder="player 2"
+          />
+        </div>
+        <div class="form-control">
+          <label class="form-control__label" for="p2-marker">marker</label>
+          <input
+            data-p2-marker
+            name="p2-marker"
+            id="p2-marker"
+            class="form-control__input"
+            type="text"
+            maxlength="1"
+            placeholder="o"
+          />
+        </div>
+
+        <button class="btn form__btn">Start Game</button>
+      </form>
+
+      <div data-gameover-modal class="model__confirm">
+        <p data-gameover-message class="modalMessage">
+          Are you sure you want to delete?
+        </p>
+        <div class="model__btn-container">
+          <button data-game-reset type="button" class="btn btn--danger">
+            Play Again
+          </button>
+        </div>
+      </div>
+    </template>
+
+    <dialog data-dialog></dialog>
+
+    <header class="header">
+      <div class="header__container container">
+        <h1 class="header__logo">
+          <a
+            class="header__logo-link"
+            tabindex="0"
+            href="#"
+            aria-label="Your Library Logo"
+          >
+            <span>Tic</span>
+            <span class="logo__accent">Tac</span>
+            <span>Toe</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <!-- main -->
+    <main>
+      <section class="game">
+        <div class="container">
+          <header data-game-header class="game__header">
+            <div
+              data-player-info="1"
+              class="player__info-container player__info-container--accent"
+            >
+              <div class="player-info">
+                <div data-player-name="1" class="playerName">Player One:</div>
+                <div
+                  data-player-marker="1"
+                  class="marker marker--accent"
+                  title="marker"
+                >
+                  X
+                </div>
+              </div>
+              <!-- <div class="score-container">
+                Score:
+                <span class="player-score">0</span>
+              </div> -->
+            </div>
+            <div data-player-info="2" class="player__info-container">
+              <div class="player-info">
+                <div data-player-name="2" class="playerName">Player Two:</div>
+                <div data-player-marker="2" class="marker">X</div>
+              </div>
+              <!-- <div class="score-container">
+                Score:
+                <span class="player-score">3</span>
+              </div> -->
+            </div>
+          </header>
+
+          <div class="game__body">
+            <div class="message">
+              <div>Ahmad Turns</div>
+            </div>
+            <div data-board class="grid-container">
+              <div class="grid-item grid-item--player-1 filled" data-cell="01">
+                X
+              </div>
+              <div
+                class="grid-item grid-item--player-2 filled"
+                data-cell="02"
+              ></div>
+              <div class="grid-item" data-cell="03">O</div>
+              <div class="grid-item item--hover-p1" data-cell="04">X</div>
+              <div class="grid-item" data-cell="05"></div>
+              <div class="grid-item" data-cell="06"></div>
+              <div class="grid-item" data-cell="07"></div>
+              <div class="grid-item" data-cell="08"></div>
+              <div class="grid-item" data-cell="09"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+      <small>&copy; <time>2025</time> Tic Tac Toe, ALL RIGHTS RESERVED. </small>
+    </footer>
+  </body>
+</html>
